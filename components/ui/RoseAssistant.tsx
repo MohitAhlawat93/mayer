@@ -110,7 +110,7 @@ export function RoseAssistant() {
   };
 
   return (
-    <div className="fixed inset-x-3 bottom-[4.35rem] z-[70] flex justify-end sm:inset-x-auto sm:bottom-5 sm:left-auto sm:right-5">
+    <div className="fixed inset-x-3 bottom-[7.8rem] z-[70] flex justify-end sm:inset-x-auto sm:left-auto sm:right-5">
       {open ? (
         <>
           <button
@@ -229,7 +229,7 @@ export function RoseAssistant() {
         onClick={toggleAssistant}
         aria-expanded={open}
         aria-controls="rose-title"
-        className={(open ? "hidden sm:inline-flex " : "inline-flex ") + "h-11 items-center gap-2 rounded-full border border-white/45 bg-[#fff9f2]/92 px-3.5 text-[#5c4542] shadow-[0_10px_30px_rgba(55,45,35,.13)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-[#fffdf9]"}
+        className={(open ? "hidden sm:inline-flex " : "inline-flex ") + "h-11 items-center gap-2 rounded-full border border-[#e2c489]/30 bg-[#0d1714]/88 px-3.5 text-[#fff8ec] shadow-[0_10px_30px_rgba(0,0,0,.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-[#e2c489]/55"}
       >
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#7a5a55] text-white">
           <RoseMark />

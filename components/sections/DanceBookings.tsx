@@ -3,49 +3,50 @@ import { getWhatsAppHref, siteContent } from "@/content/site-content";
 
 export function DanceBookings() {
   return (
-    <section id="performances" className="section-soft relative overflow-hidden px-5 py-20 sm:px-7 sm:py-24 lg:px-12 lg:py-32">
-      <div className="mx-auto max-w-[1440px]">
-        <p className="text-[8px] font-bold uppercase tracking-[.28em] text-accent">
+    <section id="performances" className="relative overflow-hidden bg-[#101613] px-5 py-20 text-[#fff8ec] sm:px-8 sm:py-24 lg:px-14 lg:py-32 xl:px-16">
+      <div className="pointer-events-none absolute -right-20 top-8 h-96 w-96 rounded-full border border-[#d4a55b]/10" />
+      <div className="mx-auto max-w-[1380px]">
+        <p className="text-[8px] font-bold uppercase tracking-[.3em] text-[#d7a653]">
           {siteContent.seo.serviceLabel} · {siteContent.profile.city}
         </p>
 
-        <div className="mt-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <h2 className="max-w-3xl font-display text-[clamp(3.2rem,5vw,5.5rem)] font-light leading-[.92] tracking-[-.045em] text-deep">
-            Selected <span className="italic text-[#a87538]">experiences.</span>
+        <div className="mt-5 grid gap-7 lg:grid-cols-[1fr_.7fr] lg:items-end">
+          <h2 className="max-w-3xl font-display text-[clamp(3.3rem,5.3vw,5.8rem)] font-medium leading-[.88] tracking-[-.04em]">
+            Selected
+            <span className="block italic font-light text-[#e1b86f]">experiences.</span>
           </h2>
-          <p className="max-w-md text-sm leading-7 text-muted">{siteContent.seo.serviceDescription}</p>
+          <p className="max-w-md text-sm leading-7 text-white/58">{siteContent.seo.serviceDescription}</p>
         </div>
 
-        <div className="mt-11 grid gap-4 lg:grid-cols-3">
+        <div className="mt-12 grid gap-px overflow-hidden border border-white/12 bg-white/12 lg:grid-cols-3">
           {siteContent.danceBookings.map((item, index) => (
             <article
               key={item.title}
-              className="editorial-card depth-card flex min-h-[315px] flex-col justify-between border-t-2 border-t-accent/55 p-6 sm:p-7"
+              className="flex min-h-[340px] flex-col justify-between bg-[#121a17] p-7 transition hover:bg-[#17211d]"
             >
               <div>
-                <div className="flex items-center justify-between border-b border-line pb-5">
-                  <span className="font-display text-2xl font-light text-accent">0{index + 1}</span>
-                  <span className="text-[7px] font-bold uppercase tracking-[.2em] text-muted">{item.suffix}</span>
+                <div className="flex items-center justify-between border-b border-white/10 pb-5">
+                  <span className="font-display text-2xl font-light text-[#d8a957]">0{index + 1}</span>
+                  <span className="text-[7px] font-bold uppercase tracking-[.2em] text-white/36">{item.suffix}</span>
                 </div>
 
-                <h3 className="mt-7 max-w-sm font-display text-3xl font-light leading-[1.06] text-deep">
+                <h3 className="mt-8 max-w-sm font-display text-4xl font-medium leading-[.98] text-[#fff8ec]">
                   {item.title}
                 </h3>
-                <p className="mt-4 max-w-sm text-sm leading-7 text-muted">{item.note}</p>
+                <p className="mt-5 max-w-sm text-sm leading-7 text-white/52">{item.note}</p>
               </div>
 
-              <div className="mt-9">
-                <p className="font-display text-2xl font-light text-[#8f6837]">{item.price}</p>
+              <div className="mt-10 flex items-end justify-between gap-4">
+                <p className="font-display text-2xl font-light text-[#d8a957]">{item.price}</p>
                 <TrackedLink
                   href={getWhatsAppHref(item.inquiry)}
                   target={siteContent.contact.whatsapp.configured ? "_blank" : undefined}
                   rel={siteContent.contact.whatsapp.configured ? "noreferrer" : undefined}
                   eventName="booking_inquiry_click"
                   eventParams={{ package: item.title, channel: "whatsapp" }}
-                  className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-sm border border-deep/15 bg-[#fffaf1]/74 px-5 text-[8px] font-bold uppercase tracking-[.18em] text-deep transition hover:bg-[#fffaf1]"
+                  className="inline-flex min-h-11 items-center justify-center border border-[#d8a957]/45 px-5 text-[8px] font-bold uppercase tracking-[.18em] text-[#fff8ec] transition hover:bg-[#d8a957] hover:text-[#101613]"
                 >
-                  Ask about this
-                  <span className="ml-2 text-sm font-normal">→</span>
+                  Enquire <span className="ml-2 text-sm">→</span>
                 </TrackedLink>
               </div>
             </article>
