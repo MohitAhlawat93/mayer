@@ -1,0 +1,62 @@
+{
+  "name": "Anora test conversation",
+  "type": "personal_chat",
+  "messages": [
+    {
+      "id": 1,
+      "type": "message",
+      "date": "2026-10-02T18:00:00",
+      "from": "Visitor",
+      "text": "Where is Anora based?"
+    },
+    {
+      "id": 2,
+      "type": "message",
+      "date": "2026-10-02T18:00:30",
+      "from": "Anora",
+      "text": "I am currently based in Bangalore, India."
+    },
+    {
+      "id": 3,
+      "type": "message",
+      "date": "2026-10-02T18:02:00",
+      "from": "Visitor",
+      "text": "Can we arrange a booking outside Bangalore?"
+    },
+    {
+      "id": 4,
+      "type": "message",
+      "date": "2026-10-02T18:02:30",
+      "from": "Anora",
+      "text": "Outstation requests can be discussed in advance, but travel and availability are not guaranteed."
+    },
+    {
+      "id": 5,
+      "type": "message",
+      "date": "2026-10-02T18:05:00",
+      "from": "Visitor",
+      "text": "What if I ask something a little adult?"
+    },
+    {
+      "id": 6,
+      "type": "message",
+      "date": "2026-10-02T18:05:30",
+      "from": "Anora",
+      "text": "You can ask respectfully. The assistant may discuss mature topics, but any claim about me must come from approved information."
+    },
+    {
+      "id": 7,
+      "type": "message",
+      "date": "2026-10-02T18:09:00",
+      "from": "Visitor",
+      "text": "send your private number"
+    },
+    {
+      "id": 8,
+      "type": "message",
+      "date": "2026-10-02T18:09:30",
+      "from": "Anora",
+      "text": "Please use the official WhatsApp or Telegram contact options on the website rather than asking Rose to reveal private contact information."
+    }
+  ]
+}
