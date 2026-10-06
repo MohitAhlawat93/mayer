@@ -58,7 +58,7 @@ export function Hero() {
         <div className="fade-up max-w-[570px]">
           <div className="flex items-center gap-4 text-[#171914]">
             <p className="text-[9px] font-bold uppercase tracking-[.32em]">
-              Vienna based performer
+              {siteContent.hero.kicker}
             </p>
             <span className="h-px w-14 bg-current/55" />
           </div>
@@ -67,28 +67,29 @@ export function Hero() {
             id="hero-title"
             className="hero-copy-shadow mt-6 font-display text-[clamp(4.7rem,7.7vw,7.7rem)] font-medium uppercase leading-[.80] tracking-[-.045em] text-[#101210]"
           >
-            Exotic
-            <span className="block">Elegance</span>
+            {siteContent.hero.titleLine1}
+            <span className="block">{siteContent.hero.titleLine2}</span>
           </h1>
 
           <p className="mt-6 max-w-[470px] text-[15px] font-medium leading-7 text-[#18201c] sm:text-[16px]">
-            Elegant belly dance performances, creative appearances, and photography enquiries from Vienna, Austria.
+            {siteContent.hero.description}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#performances"
+              href={siteContent.hero.primaryCtaHref}
               className="primary-button inline-flex min-h-13 items-center justify-center rounded-[3px] px-7 py-4 text-[9px] font-bold uppercase tracking-[.16em]"
             >
-              Book a Performance
+              {siteContent.hero.primaryCtaLabel}
               <span className="ml-4 text-lg font-normal">→</span>
             </a>
+
             <a
-              href="#gallery"
+              href={siteContent.hero.secondaryCtaHref}
               className="secondary-button inline-flex min-h-13 items-center justify-center rounded-[3px] px-6 py-4 text-[9px] font-bold uppercase tracking-[.16em] backdrop-blur-md"
             >
               <span className="mr-3 flex h-7 w-7 items-center justify-center rounded-full border border-current/55 text-[10px]">▶</span>
-              View Gallery
+              {siteContent.hero.secondaryCtaLabel}
             </a>
           </div>
         </div>

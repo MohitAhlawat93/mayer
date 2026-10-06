@@ -4,7 +4,12 @@ const rawTelegramHandle = process.env.NEXT_PUBLIC_TELEGRAM_HANDLE?.trim() ?? "";
 const whatsappNumber = rawWhatsappNumber.replace(/\D/g, "");
 const telegramHandle = rawTelegramHandle.replace(/^@/, "");
 
-// CLONE CONTROL: update this profile block first when reusing the site.
+// ============================================================
+// MAYER MAIN CONTROL FILE
+// Most routine website changes can be made in this file.
+// See MAYER-CUSTOMIZATION-GUIDE.md for a complete walkthrough.
+// ============================================================
+
 const profile = {
   name: "Mayer",
   profession: "Belly Dancer & Performer",
@@ -25,15 +30,28 @@ const profile = {
     "Movement should feel effortless, expressive, and unforgettable.",
 } as const;
 
-// CLONE CONTROL: edit this SEO block when the person, city, profession, or search intent changes.
+const hero = {
+  kicker: "Vienna based performer",
+  titleLine1: "Exotic",
+  titleLine2: "Elegance",
+  description:
+    "Elegant belly dance performances, creative appearances, and photography enquiries from Vienna, Austria.",
+  primaryCtaLabel: "Book a Performance",
+  primaryCtaHref: "#rates",
+  secondaryCtaLabel: "View Gallery",
+  secondaryCtaHref: "#gallery",
+} as const;
+
 const seo = {
   siteUrl: "https://mayer.vercel.app",
+  locale: "en_AT",
   title: "Mayer | Belly Dancer & Performer in Vienna, Austria",
   description:
-    "Meet Mayer, a 24-year-old Vienna-based belly dancer and performer. Explore her profile, gallery, performance options, photography enquiries, and direct contact details.",
-  serviceLabel: "Performance enquiries",
+    "Meet Mayer, a 24-year-old Vienna-based belly dancer and performer. Explore her profile, gallery, public performance services, photography enquiries, and contact details.",
+  category: "Performing Arts",
+  serviceLabel: "Dance bookings",
   serviceDescription:
-    "Belly dance, photography, and selected event enquiries in Vienna, Austria, with direct contact for current availability.",
+    "Public dance-performance and appearance enquiries in Vienna, Austria, with current availability confirmed directly.",
   searchTargets: [
     "Mayer Vienna belly dancer",
     "belly dancer Vienna",
@@ -57,8 +75,10 @@ export function getTelegramHref() {
 
 export const siteContent = {
   profile,
+  hero,
+
   images: {
-    // Keep the existing approved image set. Only presentation/layout changes in this redesign.
+    // IMAGE CONTROL: first homepage image remains gallery-04.jpg.
     heroSlides: [
       { src: "/images/profile/gallery-04.jpg", alt: "Mayer portrait in Vienna" },
       { src: "/images/profile/gallery-03.jpg", alt: "Mayer portrait" },
@@ -83,13 +103,6 @@ export const siteContent = {
     ],
   },
 
-  // Kept as reusable structured profile facts.
-  bodyMeasurements: [
-    { label: "Height", value: "170 cm" },
-    { label: "Weight", value: "67 kg" },
-    { label: "Language", value: "English" },
-  ],
-
   facts: [
     { label: "Age", value: "24" },
     { label: "Height", value: "170 cm" },
@@ -99,36 +112,95 @@ export const siteContent = {
     { label: "Country", value: profile.country },
   ],
 
-  // Public, non-explicit experiences shown on the site.
-  danceBookings: [
+  publicServices: [
     {
       title: "Belly Dance",
-      price: "By enquiry",
-      suffix: "Performance",
-      note: "Elegant belly dance performance enquiries for selected events and private occasions.",
-      inquiry: "Hi Mayer, I would like to inquire about a belly dance performance.",
+      eyebrow: "Performance",
+      description:
+        "Selected belly dance performance enquiries for events and private occasions.",
     },
     {
       title: "Photography",
-      price: "By enquiry",
-      suffix: "Creative",
-      note: "Photography and creative collaboration enquiries, discussed directly in advance.",
-      inquiry: "Hi Mayer, I would like to inquire about a photography collaboration.",
+      eyebrow: "Creative",
+      description:
+        "Photography and creative collaboration enquiries discussed in advance.",
     },
     {
       title: "Event Appearance",
+      eyebrow: "Vienna & Travel",
+      description:
+        "Selected event and appearance enquiries in Vienna, with travel discussed individually.",
+    },
+    {
+      title: "Private Dance Session",
+      eyebrow: "By Arrangement",
+      description:
+        "Private dance-session enquiries with timing and location confirmed directly.",
+    },
+    {
+      title: "Custom Performance",
+      eyebrow: "Tailored",
+      description:
+        "Custom performance concepts and choreography can be discussed for suitable events.",
+    },
+    {
+      title: "Travel Enquiry",
+      eyebrow: "Destination",
+      description:
+        "Travel availability for selected performance opportunities can be discussed directly.",
+    },
+  ],
+
+  // PUBLIC DANCE RATE CARDS. Edit titles/durations/prices here.
+  danceBookings: [
+    {
+      title: "Private Dance Session",
+      duration: "1 hour",
+      price: "Set price",
+      note: "A one-hour private dance booking. Location and timing are confirmed directly.",
+      inquiry: "Hi Mayer, I would like to ask about a 1-hour private dance session.",
+    },
+    {
+      title: "Private Dance Session",
+      duration: "2 hours",
+      price: "Set price",
+      note: "A two-hour private dance booking. Location and timing are confirmed directly.",
+      inquiry: "Hi Mayer, I would like to ask about a 2-hour private dance session.",
+    },
+    {
+      title: "On-Location Dance Session",
+      duration: "1 hour",
+      price: "Set price",
+      note: "A one-hour dance booking at a suitable agreed location.",
+      inquiry: "Hi Mayer, I would like to ask about a 1-hour on-location dance session.",
+    },
+    {
+      title: "On-Location Dance Session",
+      duration: "2 hours",
+      price: "Set price",
+      note: "A two-hour dance booking at a suitable agreed location.",
+      inquiry: "Hi Mayer, I would like to ask about a 2-hour on-location dance session.",
+    },
+    {
+      title: "Extended Evening Dance Booking",
+      duration: "Extended",
       price: "By enquiry",
-      suffix: "Vienna & travel",
-      note: "Selected appearance and event enquiries in Vienna, with travel discussed individually.",
-      inquiry: "Hi Mayer, I would like to inquire about an event appearance.",
+      note: "A longer evening dance or appearance booking arranged in advance.",
+      inquiry: "Hi Mayer, I would like to ask about an extended evening dance booking.",
+    },
+    {
+      title: "Full-Night Dance Booking",
+      duration: "Full night",
+      price: "By enquiry",
+      note: "An extended dance or event appearance booking with details agreed in advance.",
+      inquiry: "Hi Mayer, I would like to ask about a full-night dance booking.",
     },
   ],
 
   /*
-    SELF-MANAGED PRIVATE CONTENT PLACEHOLDER
-    This block is intentionally NOT rendered by the public UI.
-    If you choose to publish additional lawful adult-only information yourself,
-    replace the placeholder values here and build your own rendering logic.
+    PRIVATE / SELF-MANAGED PLACEHOLDER
+    This data is NOT rendered and is NOT included in SEO, structured data,
+    Rose, or public rate cards.
   */
   privateServicesPlaceholder: {
     heading: "Private details",
@@ -149,6 +221,7 @@ export const siteContent = {
       configured: Boolean(telegramHandle),
     },
   },
+
   seo,
 } as const;
 

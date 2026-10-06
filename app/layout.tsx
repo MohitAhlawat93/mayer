@@ -24,17 +24,31 @@ const googleSiteVerification =
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
+  applicationName: siteContent.profile.name,
   title: siteContent.seo.title,
   description: siteContent.seo.description,
   keywords: [...siteContent.seo.searchTargets],
+  creator: siteContent.profile.name,
+  category: siteContent.seo.category,
   alternates: { canonical: "/" },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: siteContent.seo.title,
     description: siteContent.seo.description,
     type: "website",
-    locale: "en_AT",
+    locale: siteContent.seo.locale,
     siteName: siteContent.profile.name,
-    images: [{ url: siteContent.images.hero.src, alt: siteContent.images.hero.alt }],
+    url: "/",
+    images: [
+      {
+        url: siteContent.images.hero.src,
+        alt: siteContent.images.hero.alt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -42,7 +56,21 @@ export const metadata: Metadata = {
     description: siteContent.seo.description,
     images: [siteContent.images.hero.src],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "AT-9",
+    "geo.placename": siteContent.profile.city,
+  },
   ...(googleSiteVerification
     ? {
         verification: {

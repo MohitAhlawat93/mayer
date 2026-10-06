@@ -7,9 +7,9 @@ import { siteContent } from "@/content/site-content";
 const links = [
   { href: "#top", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#performances", label: "Performances" },
+  { href: "#services", label: "Services" },
+  { href: "#rates", label: "Rates" },
   { href: "#gallery", label: "Gallery" },
-  { href: "#profile", label: "Profile" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -45,7 +45,7 @@ export function Navigation() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-6 md:flex lg:gap-7">
+        <div className="hidden items-center gap-5 md:flex lg:gap-7">
           {links.map((item) => (
             <a
               key={item.href}

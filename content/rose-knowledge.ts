@@ -13,7 +13,7 @@ export const roseKnowledge = {
     ownerName: "Mayer",
     greeting: "Hello, I’m Rose.",
     intro:
-      "I’m Mayer’s personal assistant. Ask me about Mayer’s public profile, Vienna location, performances, photography enquiries, or how to get in touch.",
+      "I’m Mayer’s personal assistant. Ask me about Mayer’s public profile, Vienna location, public dance services, photography enquiries, or how to get in touch.",
     inputPlaceholder: "Ask Rose anything...",
   },
 
@@ -26,7 +26,7 @@ export const roseKnowledge = {
     weight: "67 kg",
     languages: ["English"],
     shortBio:
-      "Mayer is based in Vienna, Austria and is available for selected belly dance, event, and photography enquiries.",
+      "Mayer is based in Vienna, Austria and is available for selected belly dance, event, photography, and public dance-session enquiries.",
   },
 
   booking: {
@@ -45,14 +45,14 @@ export const roseKnowledge = {
   contact: {
     channels: ["WhatsApp", "Telegram"],
     preferredMessage:
-      "For performance, photography, or general profile enquiries, use the WhatsApp or Telegram options on the website.",
+      "For public dance-performance, photography, event, or general profile enquiries, use the WhatsApp or Telegram options on the website.",
   },
 
   boundaries: {
     liveAvailability:
       "I can explain Mayer’s public profile, but current availability must be confirmed directly.",
     unknownAnswer:
-      "I don’t have confirmed public information about that. Please ask about Mayer’s profile, performances, photography, Vienna location, or contact options.",
+      "I don’t have confirmed public information about that. Please ask about Mayer’s profile, performances, photography, Vienna location, public dance bookings, or contact options.",
     offTopic:
       "I’m Mayer’s personal assistant, so I can best help with her public profile, Vienna location, performances, photography, availability, and contact information.",
   },
@@ -69,9 +69,9 @@ export const roseKnowledge = {
         "Mayer is currently based in Vienna, Austria. Travel or event arrangements can be discussed directly.",
     },
     {
-      label: "Performances",
+      label: "Services",
       answer:
-        "The public site currently highlights belly dance performances, selected event appearances, and photography enquiries.",
+        "The public site highlights belly dance, event appearances, photography, private dance-session enquiries, custom performances, and selected travel enquiries.",
     },
     {
       label: "Contact",
@@ -112,12 +112,12 @@ export const roseKnowledge = {
       keywords: ["available", "availability", "today", "tonight", "tomorrow"],
     },
     {
-      id: "performances",
+      id: "public-services",
       category: "booking",
-      question: "What public experiences are listed?",
+      question: "What public services are listed?",
       answer:
-        "The public site lists belly dance, selected event appearance, and photography enquiries.",
-      keywords: ["belly dance", "performance", "event", "photography", "experience"],
+        "The public site lists belly dance, photography, event appearances, private dance-session enquiries, custom performance, and selected travel enquiries.",
+      keywords: ["belly dance", "performance", "event", "photography", "dance session", "services"],
     },
     {
       id: "languages",
@@ -135,10 +135,3 @@ export const roseKnowledge = {
     },
   ] satisfies RoseFaqItem[],
 } as const;
-
-/*
-  SELF-MANAGED KNOWLEDGE
-  Keep this file limited to information you are comfortable making available to
-  the public assistant. Do not add secrets, private addresses, credentials, or
-  unverified information. The assistant should not invent profile-specific facts.
-*/
