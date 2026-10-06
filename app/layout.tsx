@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: siteContent.seo.title,
   description: siteContent.seo.description,
-  keywords: siteContent.seo.searchTargets,
+  keywords: [...siteContent.seo.searchTargets],
   alternates: { canonical: "/" },
   openGraph: {
     title: siteContent.seo.title,
