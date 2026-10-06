@@ -72,13 +72,13 @@ export async function POST(request: Request) {
   }
 
   const history = parseHistory(body.history);
-  const tenantId = process.env.ROSE_TENANT_ID?.trim().toLowerCase() || "anora";
+  const tenantId = process.env.ROSE_TENANT_ID?.trim().toLowerCase() || "mayer";
   const tenant = await getRoseTenant(tenantId);
 
   const ownerName =
     tenant?.display_name ||
     process.env.ROSE_OWNER_NAME?.trim() ||
-    "Anora";
+    "Mayer";
 
   const assistantName =
     tenant?.assistant_name ||

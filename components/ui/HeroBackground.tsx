@@ -23,50 +23,35 @@ export function HeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#f5f0e8]" aria-hidden="true">
-      <div className="absolute inset-0 md:left-[42%]">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.src}
-            className="hero-slide absolute inset-0 overflow-hidden bg-[#d8d0c4]"
-            data-active={index === active}
-          >
-            <Image
-              src={slide.src}
-              alt=""
-              fill
-              priority={index === 0}
-              quality={72}
-              sizes="(max-width: 767px) 100vw, 62vw"
-              className="scale-110 object-cover object-center opacity-30 blur-2xl"
-            />
-
-            <Image
-              src={slide.src}
-              alt=""
-              fill
-              priority={index === 0}
-              quality={95}
-              sizes="(max-width: 767px) 100vw, 62vw"
-              className="object-contain object-center"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-[#23302b]/10 via-transparent to-white/5" />
-          </div>
-        ))}
-
-        <div className="absolute inset-y-0 left-0 hidden w-[22%] bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/72 to-transparent md:block" />
-      </div>
+    <div className="absolute inset-0 overflow-hidden bg-[#111916]" aria-hidden="true">
+      {slides.map((slide, index) => (
+        <div
+          key={slide.src}
+          className="hero-slide absolute inset-0 overflow-hidden bg-[#111916]"
+          data-active={index === active}
+        >
+          <Image
+            src={slide.src}
+            alt=""
+            fill
+            priority={index === 0}
+            quality={95}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(205,147,67,.08),rgba(17,25,22,.08)_50%,rgba(17,25,22,.28))]" />
+        </div>
+      ))}
 
       <div className="hero-vignette absolute inset-0" />
 
-      <div className="absolute bottom-5 right-5 hidden gap-1.5 md:flex">
+      <div className="absolute bottom-[8.2rem] right-6 hidden gap-1.5 md:flex">
         {slides.map((slide, index) => (
           <span
             key={slide.src}
             className={
               "h-1 rounded-full shadow-sm transition-all duration-700 " +
-              (index === active ? "w-7 bg-white/90" : "w-2 bg-white/50")
+              (index === active ? "w-8 bg-[#e2c489]" : "w-2 bg-white/45")
             }
           />
         ))}

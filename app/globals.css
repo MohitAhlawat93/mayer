@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 /*
-  CLONE CONTROL — SOOTHING PREMIUM THEME
-  Change these shared tokens when cloning the site for another profile.
+  MAYER — LUXURY DESTINATION THEME
+  Inspired by a warm resort / destination editorial aesthetic.
 */
 :root {
-  --background: #f5f0e8;
-  --surface: #fffdf9;
-  --surface-soft: #ece5da;
-  --foreground: #24302c;
-  --muted: #767c76;
-  --muted-strong: #59625d;
-  --line: rgba(36, 48, 44, .12);
-  --accent: #b69263;
-  --accent-soft: #d8c8ae;
-  --deep: #23302b;
-  --sage: #94a08f;
-  --rose: #7a5a55;
-  --success: #3d8b6d;
+  --background: #eee3d1;
+  --surface: #fffaf1;
+  --surface-soft: #e8ddcb;
+  --foreground: #171a18;
+  --muted: #776f63;
+  --muted-strong: #50493f;
+  --line: rgba(73, 56, 35, .15);
+  --accent: #bd8a43;
+  --accent-soft: #e2c489;
+  --deep: #111916;
+  --sage: #31544f;
+  --rose: #7b5949;
+  --success: #5d765c;
 }
 
 @theme inline {
@@ -52,8 +52,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   background:
-    radial-gradient(circle at 18% 0%, rgba(182, 146, 99, .07), transparent 28rem),
-    var(--background);
+    radial-gradient(circle at 12% 0%, rgba(189, 138, 67, .09), transparent 30rem),
+    linear-gradient(180deg, #f2e8d8 0%, #eee3d1 100%);
 }
 
 body::after {
@@ -62,7 +62,7 @@ body::after {
   inset: 0;
   z-index: 999;
   pointer-events: none;
-  opacity: .018;
+  opacity: .017;
   background-image: url("/noise.svg");
   background-size: 190px 190px;
   mix-blend-mode: multiply;
@@ -85,65 +85,65 @@ button { font: inherit; }
 
 .section-paper {
   background:
-    radial-gradient(circle at 90% 0%, rgba(148, 160, 143, .07), transparent 25rem),
-    #fffdf9;
+    radial-gradient(circle at 85% 8%, rgba(189, 138, 67, .07), transparent 28rem),
+    #fffaf1;
 }
 
 .section-soft {
   background:
-    radial-gradient(circle at 8% 18%, rgba(182, 146, 99, .06), transparent 24rem),
-    linear-gradient(180deg, #f3eee6 0%, #ece5da 100%);
+    radial-gradient(circle at 8% 18%, rgba(189, 138, 67, .08), transparent 28rem),
+    linear-gradient(180deg, #f0e5d4 0%, #e8ddcb 100%);
 }
 
 .section-mist {
   background:
-    linear-gradient(135deg, rgba(255,253,249,.95), rgba(236,229,218,.74));
+    linear-gradient(135deg, rgba(255,250,241,.96), rgba(232,221,203,.76));
 }
 
 .glass-surface {
-  background: rgba(255, 253, 249, .76);
-  border: 1px solid rgba(255, 255, 255, .58);
-  box-shadow: 0 18px 55px rgba(60, 52, 42, .08);
+  background: rgba(255, 250, 241, .78);
+  border: 1px solid rgba(255, 255, 255, .44);
+  box-shadow: 0 18px 55px rgba(54, 38, 22, .08);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
 
 .soft-card {
-  background: rgba(255, 253, 249, .86);
+  background: rgba(255, 250, 241, .9);
   border: 1px solid var(--line);
-  box-shadow: 0 18px 48px rgba(65, 50, 33, .06);
+  box-shadow: 0 18px 48px rgba(54, 38, 22, .07);
 }
 
 .editorial-card {
-  background: rgba(255, 253, 249, .68);
-  border: 1px solid rgba(36, 48, 44, .10);
-  box-shadow: 0 20px 60px rgba(65, 50, 33, .055);
+  background: rgba(255, 250, 241, .73);
+  border: 1px solid rgba(73, 56, 35, .13);
+  box-shadow: 0 20px 60px rgba(54, 38, 22, .065);
   backdrop-filter: blur(12px);
 }
 
 .primary-button {
-  background: var(--deep);
-  color: #fffdf9;
-  border: 1px solid var(--deep);
+  background: #12211f;
+  color: #fff9ef;
+  border: 1px solid #12211f;
   transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
 }
 
 .primary-button:hover {
-  background: #182520;
+  background: #0b1715;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(35, 48, 43, .14);
+  box-shadow: 0 12px 28px rgba(17, 25, 22, .2);
 }
 
 .secondary-button {
-  background: rgba(255, 253, 249, .72);
-  color: var(--deep);
-  border: 1px solid rgba(36, 48, 44, .16);
+  background: rgba(255, 248, 236, .09);
+  color: #fffaf1;
+  border: 1px solid rgba(255, 250, 241, .38);
   transition: transform .25s ease, background .25s ease, border-color .25s ease;
 }
 
 .secondary-button:hover {
-  background: rgba(255, 253, 249, .96);
-  border-color: rgba(36, 48, 44, .26);
+  background: rgba(255, 248, 236, .17);
+  border-color: rgba(255, 250, 241, .58);
   transform: translateY(-2px);
 }
 
@@ -153,15 +153,15 @@ button { font: inherit; }
 
 @media (hover:hover) {
   .depth-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(182, 146, 99, .3);
-    box-shadow: 0 24px 58px rgba(65, 50, 33, .09);
+    transform: translateY(-5px);
+    border-color: rgba(189, 138, 67, .34);
+    box-shadow: 0 26px 62px rgba(54, 38, 22, .11);
   }
 }
 
 .hero-slide {
   opacity: 0;
-  transform: scale(1.035);
+  transform: scale(1.02);
   transition: opacity 1.6s ease;
 }
 
@@ -172,7 +172,8 @@ button { font: inherit; }
 
 .hero-vignette {
   background:
-    linear-gradient(90deg, rgba(245,240,232,1) 0%, rgba(245,240,232,.98) 30%, rgba(245,240,232,.9) 39%, rgba(245,240,232,.3) 52%, transparent 64%);
+    linear-gradient(90deg, rgba(13,19,17,.84) 0%, rgba(13,19,17,.66) 29%, rgba(13,19,17,.28) 49%, rgba(13,19,17,.06) 68%, transparent 82%),
+    linear-gradient(0deg, rgba(10,16,14,.48) 0%, rgba(10,16,14,.08) 31%, transparent 55%);
 }
 
 .availability-pulse { position: relative; }
@@ -182,7 +183,7 @@ button { font: inherit; }
   position: absolute;
   inset: -5px;
   border-radius: 9999px;
-  border: 1px solid rgba(61,139,109,.35);
+  border: 1px solid rgba(226,196,137,.45);
   animation: availability-pulse 2.4s ease-out infinite;
 }
 
@@ -193,8 +194,8 @@ button { font: inherit; }
 .fade-up-delay { animation: fade-up 950ms 120ms cubic-bezier(.2,.7,.2,1) both; }
 
 @keyframes cinematic-drift {
-  from { transform: scale(1.035); }
-  to { transform: scale(1.085); }
+  from { transform: scale(1.02); }
+  to { transform: scale(1.075); }
 }
 
 @keyframes fade-up {
@@ -212,7 +213,7 @@ button { font: inherit; }
 
   .hero-vignette {
     background:
-      linear-gradient(180deg, rgba(245,240,232,.04) 0%, rgba(245,240,232,.08) 38%, rgba(245,240,232,.78) 69%, rgba(245,240,232,.98) 86%, rgba(245,240,232,1) 100%);
+      linear-gradient(180deg, rgba(10,16,14,.08) 0%, rgba(10,16,14,.12) 34%, rgba(10,16,14,.58) 61%, rgba(10,16,14,.92) 100%);
   }
 
   .hero-slide[data-active="true"] {

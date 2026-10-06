@@ -4,120 +4,141 @@ const rawTelegramHandle = process.env.NEXT_PUBLIC_TELEGRAM_HANDLE?.trim() ?? "";
 const whatsappNumber = rawWhatsappNumber.replace(/\D/g, "");
 const telegramHandle = rawTelegramHandle.replace(/^@/, "");
 
-// CLONE CONTROL: update this profile block first when reusing the site for another person.
+// CLONE CONTROL: update this profile block first when reusing the site.
 const profile = {
-  name: "Anora",
-  profession: "Dancer",
-  city: "Bangalore",
-  countryCode: "IN",
-  location: "Bangalore, IN",
-  status: "Available in Bangalore",
-  eyebrow: "ANORA · BANGALORE, IN",
-  tagline: "Elegant presence. Quiet confidence.",
+  name: "Mayer",
+  profession: "Belly Dancer & Performer",
+  city: "Vienna",
+  country: "Austria",
+  countryCode: "AT",
+  location: "Vienna, Austria",
+  status: "Based in Vienna, Austria",
+  eyebrow: "MAYER · VIENNA, AUSTRIA",
+  tagline: "Elegant movement. Warm presence.",
   serviceSummary:
-    "Bangalore-based dancer available for private studio, on-location, and full-day dance bookings.",
+    "Vienna-based belly dancer and performer available for selected performance, event, and photography enquiries.",
   intro:
-    "Warm, discreet, and easy to talk to. I value privacy, cleanliness, respectful communication, and a relaxed atmosphere.",
+    "A refined, image-led profile for performance and creative enquiries in Vienna and beyond.",
   bio:
-    "I’m Anora, 27, currently in Bangalore. I like things to feel natural, comfortable, and uncomplicated. Good manners, discretion, and clear communication matter to me. If you would like to know more or verify my profile, WhatsApp or Telegram is the easiest way to reach me.",
+    "I’m Mayer, 24, based in Vienna, Austria. I’m 170 cm tall, 67 kg, and speak English. I enjoy expressive movement, polished presentation, photography, and creating memorable experiences with a calm, elegant atmosphere.",
   quote:
-    "I prefer simple things done beautifully — good conversation, good energy, and mutual respect.",
+    "Movement should feel effortless, expressive, and unforgettable.",
 } as const;
 
 // CLONE CONTROL: edit this SEO block when the person, city, profession, or search intent changes.
 const seo = {
-  siteUrl: "https://dancerportfolio.vercel.app",
-  title: "Anora | Dancer in Bangalore – Private Dance Bookings",
+  siteUrl: "https://mayer.vercel.app",
+  title: "Mayer | Belly Dancer & Performer in Vienna, Austria",
   description:
-    "Meet Anora, a Bangalore-based dancer available for private studio, on-location and full-day dance bookings. View her profile, gallery, rates and contact options.",
-  serviceLabel: "Dance bookings",
+    "Meet Mayer, a 24-year-old Vienna-based belly dancer and performer. Explore her profile, gallery, performance options, photography enquiries, and direct contact details.",
+  serviceLabel: "Performance enquiries",
   serviceDescription:
-    `Choose from private studio, on-location, and full-day dance bookings in ${profile.city}, with clear rates and direct enquiry.`,
+    "Belly dance, photography, and selected event enquiries in Vienna, Austria, with direct contact for current availability.",
   searchTargets: [
-    "Anora dancer Bangalore",
-    "Anora Bangalore dancer",
-    "private dance booking Bangalore",
-    "dance booking Bangalore",
+    "Mayer Vienna belly dancer",
+    "belly dancer Vienna",
+    "performer Vienna Austria",
+    "event belly dancer Vienna",
+    "photography performer Vienna",
   ],
 } as const;
 
 export function getWhatsAppHref(
-  message = `Hi ${profile.name}, I would like to inquire about a booking.`,
+  message = "Hi " + profile.name + ", I would like to inquire about your profile and availability.",
 ) {
   if (!whatsappNumber) return "#contact";
-  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
 }
 
 export function getTelegramHref() {
   if (!telegramHandle) return "#contact";
-  return `https://t.me/${telegramHandle}`;
+  return "https://t.me/" + telegramHandle;
 }
 
 export const siteContent = {
   profile,
   images: {
-    // CLONE CONTROL: heroSlides controls the slow-changing homepage background.
+    // Keep the existing approved image set. Only presentation/layout changes in this redesign.
     heroSlides: [
-      { src: "/images/profile/gallery-04.jpg", alt: "Anora full-length portrait" },
-      { src: "/images/profile/gallery-03.jpg", alt: "Anora indoor portrait" },
-      { src: "/images/profile/gallery-06.jpeg", alt: "Anora portrait with a soft color backdrop" },
-      { src: "/images/profile/about.jpeg", alt: "Anora portrait" },
+      { src: "/images/profile/gallery-04.jpg", alt: "Mayer portrait in Vienna" },
+      { src: "/images/profile/gallery-03.jpg", alt: "Mayer portrait" },
+      { src: "/images/profile/gallery-06.jpeg", alt: "Mayer portrait with a soft color backdrop" },
+      { src: "/images/profile/about.jpeg", alt: "Portrait of Mayer" },
     ],
     hero: {
       src: "/images/profile/gallery-04.jpg",
-      alt: "Portrait of Anora, a Bangalore-based dancer",
+      alt: "Mayer, a Vienna-based belly dancer and performer",
     },
     about: {
       src: "/images/profile/gallery-03.jpg",
-      alt: "Anora, Bangalore-based dancer",
+      alt: "Mayer, Vienna-based performer",
     },
     gallery: [
-      { src: "/images/profile/gallery-04.jpg", alt: "Anora gallery portrait 1" },
-      { src: "/images/profile/hero.jpeg", alt: "Anora gallery portrait 2" },
-      { src: "/images/profile/about.jpeg", alt: "Anora gallery portrait 3" },
-      { src: "/images/profile/gallery-01.jpeg", alt: "Anora gallery portrait 4" },
-      { src: "/images/profile/gallery-05.jpeg", alt: "Anora gallery portrait 5" },
-      { src: "/images/profile/gallery-06.jpeg", alt: "Anora gallery portrait 6" },
+      { src: "/images/profile/gallery-04.jpg", alt: "Mayer gallery portrait 1" },
+      { src: "/images/profile/hero.jpeg", alt: "Mayer gallery portrait 2" },
+      { src: "/images/profile/about.jpeg", alt: "Mayer gallery portrait 3" },
+      { src: "/images/profile/gallery-01.jpeg", alt: "Mayer gallery portrait 4" },
+      { src: "/images/profile/gallery-05.jpeg", alt: "Mayer gallery portrait 5" },
+      { src: "/images/profile/gallery-06.jpeg", alt: "Mayer gallery portrait 6" },
     ],
   },
+
+  // Kept as reusable structured profile facts.
   bodyMeasurements: [
-    { label: "Bust", value: "34" },
-    { label: "Waist", value: "28" },
-    { label: "Hips", value: "38" },
+    { label: "Height", value: "170 cm" },
+    { label: "Weight", value: "67 kg" },
+    { label: "Language", value: "English" },
   ],
+
   facts: [
-    { label: "Age", value: "27" },
-    { label: "Height", value: "158 cm / 5′2″" },
-    { label: "Languages", value: "English · Fluent" },
-    { label: "Hair", value: "Black" },
-    { label: "Ethnicity", value: "Asian" },
-    { label: "Nationality", value: "Indian" },
-    { label: "Gender", value: "Female" },
+    { label: "Age", value: "24" },
+    { label: "Height", value: "170 cm" },
+    { label: "Weight", value: "67 kg" },
+    { label: "Languages", value: "English" },
     { label: "City", value: profile.city },
+    { label: "Country", value: profile.country },
   ],
+
+  // Public, non-explicit experiences shown on the site.
   danceBookings: [
     {
-      title: "Private Studio Dance Session",
-      price: "₹17,000",
-      suffix: "per hour",
-      note: "A private one-to-one studio dance booking.",
-      inquiry: `Hi ${profile.name}, I would like to inquire about the Private Studio Dance Session.`,
+      title: "Belly Dance",
+      price: "By enquiry",
+      suffix: "Performance",
+      note: "Elegant belly dance performance enquiries for selected events and private occasions.",
+      inquiry: "Hi Mayer, I would like to inquire about a belly dance performance.",
     },
     {
-      title: "On-Location Dance Session",
-      price: "₹20,000",
-      suffix: "per hour",
-      note: `A dance booking at a suitable ${profile.city} location.`,
-      inquiry: `Hi ${profile.name}, I would like to inquire about the On-Location Dance Session.`,
+      title: "Photography",
+      price: "By enquiry",
+      suffix: "Creative",
+      note: "Photography and creative collaboration enquiries, discussed directly in advance.",
+      inquiry: "Hi Mayer, I would like to inquire about a photography collaboration.",
     },
     {
-      title: "Full-Day Dance Booking",
-      price: "₹50,000",
-      suffix: "full day",
-      note: "An extended dance or appearance booking.",
-      inquiry: `Hi ${profile.name}, I would like to inquire about the Full-Day Dance Booking.`,
+      title: "Event Appearance",
+      price: "By enquiry",
+      suffix: "Vienna & travel",
+      note: "Selected appearance and event enquiries in Vienna, with travel discussed individually.",
+      inquiry: "Hi Mayer, I would like to inquire about an event appearance.",
     },
   ],
+
+  /*
+    SELF-MANAGED PRIVATE CONTENT PLACEHOLDER
+    This block is intentionally NOT rendered by the public UI.
+    If you choose to publish additional lawful adult-only information yourself,
+    replace the placeholder values here and build your own rendering logic.
+  */
+  privateServicesPlaceholder: {
+    heading: "Private details",
+    items: [
+      "ADD_YOUR_OWN_LAWFUL_PRIVATE_DETAIL_01",
+      "ADD_YOUR_OWN_LAWFUL_PRIVATE_DETAIL_02",
+      "ADD_YOUR_OWN_LAWFUL_PRIVATE_DETAIL_03",
+    ],
+  },
+
   contact: {
     whatsapp: {
       label: "WhatsApp",

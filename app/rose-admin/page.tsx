@@ -13,8 +13,8 @@ type IngestResult = {
 
 export default function RoseAdminPage() {
   const [secret, setSecret] = useState("");
-  const [tenantId, setTenantId] = useState("anora");
-  const [displayName, setDisplayName] = useState("Anora");
+  const [tenantId, setTenantId] = useState("mayer");
+  const [displayName, setDisplayName] = useState("Mayer");
   const [assistantName, setAssistantName] = useState("Rose");
   const [text, setText] = useState("");
   const [file, setFile] = useState<File | null>(null);

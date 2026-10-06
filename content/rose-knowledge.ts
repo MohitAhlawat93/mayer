@@ -10,24 +10,23 @@ export const roseKnowledge = {
   assistant: {
     name: "Rose",
     role: "Personal assistant",
-    ownerName: "Anora",
+    ownerName: "Mayer",
     greeting: "Hello, I’m Rose.",
     intro:
-      "I’m Anora’s personal assistant. Ask me about Anora, her bookings and profile, or just chat with me if you need help with something else.",
+      "I’m Mayer’s personal assistant. Ask me about Mayer’s public profile, Vienna location, performances, photography enquiries, or how to get in touch.",
     inputPlaceholder: "Ask Rose anything...",
   },
 
   profile: {
-    name: "Anora",
-    city: "Bangalore",
-    country: "India",
-    age: 27,
-    height: "158 cm / 5′2″",
+    name: "Mayer",
+    city: "Vienna",
+    country: "Austria",
+    age: 24,
+    height: "170 cm",
+    weight: "67 kg",
     languages: ["English"],
-    hair: "Black",
-    nationality: "Indian",
     shortBio:
-      "Anora is based in Bangalore and is available for selected dance bookings and appearances.",
+      "Mayer is based in Vienna, Austria and is available for selected belly dance, event, and photography enquiries.",
   },
 
   booking: {
@@ -35,71 +34,49 @@ export const roseKnowledge = {
     sameDayGuaranteed: false,
     confirmationRequired: true,
     notes: [
-      "Booking details should be confirmed directly before making plans.",
-      "Live availability can change and should not be assumed from the website alone.",
-      "Special requests can be discussed during direct communication.",
+      "Current availability should be confirmed directly before making plans.",
+      "Travel and event arrangements are discussed individually.",
+      "Public website information covers non-explicit performance, profile, photography, and contact details.",
     ],
   },
 
-  pricing: [
-    {
-      id: "private-studio",
-      title: "Private Studio Dance Session",
-      price: "₹17,000",
-      unit: "per hour",
-      description: "A private one-to-one studio dance booking.",
-    },
-    {
-      id: "on-location",
-      title: "On-Location Dance Session",
-      price: "₹20,000",
-      unit: "per hour",
-      description: "A dance booking at a suitable Bangalore location.",
-    },
-    {
-      id: "full-day",
-      title: "Full-Day Dance Booking",
-      price: "₹50,000",
-      unit: "full day",
-      description: "An extended dance or appearance booking.",
-    },
-  ],
+  pricing: [],
 
   contact: {
     channels: ["WhatsApp", "Telegram"],
     preferredMessage:
-      "For direct enquiries or booking confirmation, use the WhatsApp or Telegram options on the website.",
+      "For performance, photography, or general profile enquiries, use the WhatsApp or Telegram options on the website.",
   },
 
   boundaries: {
     liveAvailability:
-      "I can explain general availability information, but final availability must be confirmed directly with Anora.",
+      "I can explain Mayer’s public profile, but current availability must be confirmed directly.",
     unknownAnswer:
-      "I don’t have confirmed information about that yet. Please contact Anora directly for an accurate answer.",
+      "I don’t have confirmed public information about that. Please ask about Mayer’s profile, performances, photography, Vienna location, or contact options.",
     offTopic:
-      "I’m Anora’s personal assistant, so I can best help with her profile, bookings, pricing, location, availability, and contact information.",
+      "I’m Mayer’s personal assistant, so I can best help with her public profile, Vienna location, performances, photography, availability, and contact information.",
   },
 
   quickQuestions: [
     {
-      label: "Booking options",
+      label: "Profile",
       answer:
-        "Anora currently offers private studio sessions, on-location dance sessions, and full-day dance bookings. I can explain any of these in more detail.",
+        "Mayer is 24, 170 cm, 67 kg, English-speaking, and based in Vienna, Austria.",
     },
     {
       label: "Location",
       answer:
-        "Anora is currently based in Bangalore, India. Exact arrangements can be discussed when you contact her directly.",
+        "Mayer is currently based in Vienna, Austria. Travel or event arrangements can be discussed directly.",
     },
     {
-      label: "Prices",
+      label: "Performances",
       answer:
-        "Current dummy pricing is ₹17,000 per hour for a private studio session, ₹20,000 per hour for an on-location session, and ₹50,000 for a full-day booking.",
+        "The public site currently highlights belly dance performances, selected event appearances, and photography enquiries.",
     },
     {
       label: "Contact",
       answer:
-        "You can contact Anora directly through the WhatsApp or Telegram options on this website.",
+        "You can contact Mayer through the WhatsApp or Telegram options on this website.",
     },
   ],
 
@@ -107,88 +84,61 @@ export const roseKnowledge = {
     {
       id: "where-based",
       category: "location",
-      question: "Where is Anora based?",
-      answer: "Anora is currently based in Bangalore, India.",
-      keywords: ["where", "location", "city", "bangalore", "based"],
+      question: "Where is Mayer based?",
+      answer: "Mayer is currently based in Vienna, Austria.",
+      keywords: ["where", "location", "city", "vienna", "austria", "based"],
+    },
+    {
+      id: "profile-details",
+      category: "profile",
+      question: "What are Mayer’s public profile details?",
+      answer: "Mayer is 24, 170 cm, 67 kg, speaks English, and is based in Vienna, Austria.",
+      keywords: ["age", "height", "weight", "english", "profile", "details"],
     },
     {
       id: "how-contact",
       category: "contact",
-      question: "How can I contact Anora?",
+      question: "How can I contact Mayer?",
       answer:
-        "You can contact Anora through the WhatsApp or Telegram options available on the website.",
+        "You can contact Mayer through the WhatsApp or Telegram options available on the website.",
       keywords: ["contact", "whatsapp", "telegram", "message", "reach"],
     },
     {
       id: "availability",
       category: "availability",
-      question: "Is Anora available today?",
+      question: "Is Mayer available today?",
       answer:
-        "I can provide general guidance, but live availability should always be confirmed directly with Anora.",
+        "Live availability is not published. Please confirm current availability directly through the contact options.",
       keywords: ["available", "availability", "today", "tonight", "tomorrow"],
     },
     {
-      id: "advance-booking",
+      id: "performances",
       category: "booking",
-      question: "Should I book in advance?",
+      question: "What public experiences are listed?",
       answer:
-        "Yes. Booking in advance is recommended because same-day availability is not guaranteed.",
-      keywords: ["advance", "book", "booking", "same day", "reserve"],
-    },
-    {
-      id: "pricing",
-      category: "pricing",
-      question: "What are the booking prices?",
-      answer:
-        "Current dummy pricing is ₹17,000 per hour for a private studio session, ₹20,000 per hour for an on-location session, and ₹50,000 for a full-day booking.",
-      keywords: ["price", "pricing", "cost", "rate", "rates", "fee"],
+        "The public site lists belly dance, selected event appearance, and photography enquiries.",
+      keywords: ["belly dance", "performance", "event", "photography", "experience"],
     },
     {
       id: "languages",
       category: "profile",
-      question: "What language does Anora speak?",
-      answer: "The current profile lists English.",
+      question: "What language does Mayer speak?",
+      answer: "The current public profile lists English.",
       keywords: ["language", "languages", "english", "speak"],
     },
     {
       id: "assistant-owner",
       category: "general",
-      question: "Who is your boss?",
-      answer: "Anora is the person I assist.",
-      keywords: ["boss", "owner", "work for", "who do you work for", "your boss"],
-    },
-    {
-      id: "night-bookings",
-      category: "booking",
-      question: "Does Anora do night bookings?",
-      answer:
-        "Night bookings can be discussed by prior arrangement. Final timing and availability should be confirmed directly with Anora.",
-      keywords: ["night", "night booking", "late night", "evening booking", "overnight"],
+      question: "Who do you assist?",
+      answer: "Mayer is the person I assist.",
+      keywords: ["boss", "owner", "work for", "who do you work for", "assist"],
     },
   ] satisfies RoseFaqItem[],
 } as const;
 
 /*
-  HOW TO REPLACE DUMMY DATA LATER
-
-  1. Keep the same field names.
-  2. Replace only the values with verified real information.
-  3. Add or remove FAQ entries as needed.
-  4. Do not put secrets, private addresses, or API keys in this file.
-  5. Live availability should come from a real source later, not a hard-coded answer.
-
-  TO ADD YOUR OWN QUESTIONS:
-  Add another object inside the faq array using this shape:
-
-  {
-    id: "unique-name",
-    category: "general",
-    question: "Your question here?",
-    answer: "The approved answer Rose should use.",
-    keywords: ["important", "matching", "words"],
-  }
-
-  Mature/adult FAQs can also be added here. Keep answers factual, respectful,
-  and approved for the public site. Rose should not invent Anora-specific details
-  that are not written in this knowledge file.
+  SELF-MANAGED KNOWLEDGE
+  Keep this file limited to information you are comfortable making available to
+  the public assistant. Do not add secrets, private addresses, credentials, or
+  unverified information. The assistant should not invent profile-specific facts.
 */

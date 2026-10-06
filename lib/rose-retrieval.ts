@@ -81,9 +81,8 @@ function buildKnowledgeChunks(): RoseChunk[] {
       `${roseKnowledge.profile.name} is based in ${roseKnowledge.profile.city}, ${roseKnowledge.profile.country}.`,
       `Age: ${roseKnowledge.profile.age}.`,
       `Height: ${roseKnowledge.profile.height}.`,
+      `Weight: ${roseKnowledge.profile.weight}.`,
       `Languages: ${roseKnowledge.profile.languages.join(", ")}.`,
-      `Hair: ${roseKnowledge.profile.hair}.`,
-      `Nationality: ${roseKnowledge.profile.nationality}.`,
       roseKnowledge.profile.shortBio,
     ].join(" "),
     searchText: "",
@@ -112,16 +111,6 @@ function buildKnowledgeChunks(): RoseChunk[] {
     text: roseKnowledge.boundaries.liveAvailability,
     searchText: "",
   });
-
-  for (const item of roseKnowledge.pricing) {
-    chunks.push({
-      id: `pricing-${item.id}`,
-      category: "pricing",
-      title: item.title,
-      text: `${item.title}: ${item.price} ${item.unit}. ${item.description}`,
-      searchText: "",
-    });
-  }
 
   for (const faq of roseKnowledge.faq) {
     chunks.push({
@@ -265,7 +254,7 @@ export async function retrieveRoseContext(
     ownerName?: string;
   },
 ): Promise<RoseRagResult> {
-  const tenantId = options?.tenantId ?? "anora";
+  const tenantId = options?.tenantId ?? "mayer";
   const assistantName = options?.assistantName ?? roseKnowledge.assistant.name;
   const ownerName = options?.ownerName ?? roseKnowledge.assistant.ownerName;
 
